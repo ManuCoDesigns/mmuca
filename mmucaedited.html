@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Don Bosco Maasai Mara University Catholic Chapel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #5DADE2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        footer {
+            background-color: #5DADE2;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive Navigation Menu */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            nav ul.show-menu {
+                display: block;
+            }
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #5DADE2;
+            color: white;
+            width: 200px;
+            height: 100%;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.show-sidebar {
+            transform: translateX(0);
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to St. Don Bosco Maasai Mara University Catholic Chapel</h1>
+        <nav>
+            <button class="menu-toggle">Menu</button>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Welcome!</h2>
+            <p>Welcome to this website, MMUCA is a catholic christian students group that aims at nurturing the core and faith of its members within the community. Through our able Patron, Rev. Fr. Dr Rono and our beloved Mother, Sr. Dr. Alice Sambu, we have experienced great knowledge being impacted by these two key leaders.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>About the chapel...</p>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="container">
+            <h2>Events</h2>
+            <div class="slideshow"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div id="map" style="height: 400px;"></div>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="jumuiyas">
+        <div class="container">
+            <h2>Jumuiyas</h2>
+            <ul>
+                <li>St. Thomas</li>
+                <li>St. Augustine</li>
+                <li>St. Theresa</li>
+                <li>St. Paul</li>
+                <li>St. Clementine</li>
+                <li>St. Ignatius of Loyola</li>
+                <li>St. Bhakhita</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 St. Don Bosco Maasai Mara University Catholic Chapel | Developed and maintained by Emmanuel Otieno Gor</p>
+    </footer>
+
+    <script>
+        // JavaScript for form submission
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contact-form');
+
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // You can perform form validation here if needed
+
+                // Simulate form submission (replace with actual form submission logic)
+                console.log('Form submitted!');
+            });
+        });
+
+        // JavaScript for slideshow
+        document.addEventListener('DOMContentLoaded', function () {
+            const eventImages = [
+                'https://via.placeholder.com/600x400?text=Event%201',
+                'https://via.placeholder.com/600x400?text=Event%202',
+                'https://via.placeholder.com/600x400?text=Event%203'
+                // Add more image URLs here
+            ];
+            let currentIndex = 0;
+            const slideshowContainer = document.querySelector('#events .slideshow');
+
+            function showNextImage() {
+                slideshowContainer.style.backgroundImage = `url(${eventImages[currentIndex]})`;
+                currentIndex = (currentIndex + 1) % eventImages.length;
+            }
+
+            setInterval(showNextImage, 3000); // Change image every 3 seconds
+        });
+
+        // JavaScript for responsive navigation menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('show-menu');
+            });
+        });
+
+        // JavaScript for sidebar toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('show-sidebar');
+            });
+        });
+    </script>
+</body>
+</html>
